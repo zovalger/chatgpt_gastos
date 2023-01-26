@@ -35,9 +35,6 @@ import React, { useState, useEffect } from "react";
 //   );
 // }
 
-
-
-
 // function ExpenseTable() {
 // 	const [expenses, setExpenses] = useState([]);
 
@@ -75,28 +72,24 @@ import React, { useState, useEffect } from "react";
 // 	);
 // }
 
-
-
-
 const categories = [
-  'Alimentación', 
-  'Transporte', 
-  'Vestimenta', 
-  'Entretenimiento', 
-  'Otros',
-  'Educación',
-  'Salud',
-  'Servicios Públicos',
-  'Vivienda'
+	"Alimentación",
+	"Transporte",
+	"Vestimenta",
+	"Entretenimiento",
+	"Otros",
+	"Educación",
+	"Salud",
+	"Servicios Públicos",
+	"Vivienda",
 ];
 
 function ExpenseTable() {
-  const [expenses, setExpenses] = useState(JSON.parse(localStorage.getItem('expenses')) || []);
-  const [editingId, setEditingId] = useState(null);
-  const [expense, setExpense] = useState({})
+	const [expenses, setExpenses] = useState([]);
+	const [editingId, setEditingId] = useState(null);
+	const [expense, setExpense] = useState({});
 
-
-  	useEffect(() => {
+	useEffect(() => {
 		// Obtener los gastos existentes del localStorage
 		const expensesFromStorage =
 			JSON.parse(localStorage.getItem("expenses")) || [];
@@ -105,126 +98,139 @@ function ExpenseTable() {
 		setExpenses(expensesFromStorage);
 	}, []);
 
-  const handleDelete = id => {
-    // Obtener los gastos existentes del localStorage
-    const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+	const handleDelete = (id) => {
+		// Obtener los gastos existentes del localStorage
+		const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
-    // Filtrar el gasto que se desea eliminar
-    const newExpenses = expenses.filter(expense => expense.id !== id);
+		// Filtrar el gasto que se desea eliminar
+		const newExpenses = expenses.filter((expense) => expense.id !== id);
 
-    // Actualizar el localStorage con la nueva lista de gastos
-    localStorage.setItem('expenses', JSON.stringify(newExpenses));
+		// Actualizar el localStorage con la nueva lista de gastos
+		localStorage.setItem("expenses", JSON.stringify(newExpenses));
 
-    // Actualizar el estado del componente con la nueva lista de gastos
-    setExpenses(newExpenses);
-  };
+		// Actualizar el estado del componente con la nueva lista de gastos
+		setExpenses(newExpenses);
+	};
 
-  const handleEdit = id => {
-    setEditingId(id);
-    setExpense(expenses.find(expense => expense.id === id))
-  };
+	const handleEdit = (id) => {
+		setEditingId(id);
+		setExpense(expenses.find((expense) => expense.id === id));
+	};
 
-  const handleSave = (id) => {
-    // Obtener los gastos existentes del localStorage
-    const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+	const handleSave = (id) => {
+		// Obtener los gastos existentes del localStorage
+		const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
-    // Buscar el gasto a editar y actualizarlo
-    const newExpenses = expenses.map(exp => {
-      if (exp.id === id) {
-        return {
-          id,
-          ...expense
-        };
-      }
-      return exp;
-    });
+		// Buscar el gasto a editar y actualizarlo
+		const newExpenses = expenses.map((exp) => {
+			if (exp.id === id) {
+				return {
+					id,
+					...expense,
+				};
+			}
+			return exp;
+		});
 
-    // Actualizar el localStorage con la nueva lista de gastos
-    localStorage.setItem('expenses', JSON.stringify(newExpenses));
+		// Actualizar el localStorage con la nueva lista de gastos
+		localStorage.setItem("expenses", JSON.stringify(newExpenses));
 
-    // Actualizar el estado del componente con la nueva lista de gastos
-    setExpenses(newExpenses);
-    setEditingId(null);
-  };
+		// Actualizar el estado del componente con la nueva lista de gastos
+		setExpenses(newExpenses);
+		setEditingId(null);
+	};
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Descripción</th>
-          <th>Monto</th>
-          <th>Categoría</th>
-          <th>Fecha</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        {expenses.map(expense => (
-          <tr key={expense.id}>
-            {editingId === expense.id ? (
-              <>
-              <td>
-                <input
-                  type="text"
-                  value={expense.description}
-                  onChange={e => setExpense({ ...expense, description: e.target.value })}
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  value={expense.amount}
-                  onChange={e => setExpense({ ...expense, amount: e.target.value })}
-                />
-              </td>
-              <td>
-                <select
-                  value={expense.category}
-                  onChange={e => setExpense({ ...expense, category: e.target.value })}
-                >
-                  {categories.map(category => (
-                    <option key={category} value={category}>
-                      {category}
-                    </option>
-                  ))}
-                </select>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  value={expense.date}
-                  onChange={e => setExpense({ ...expense, date: e.target.value })}
-                />
-              </td>
-              <td>
-                <button type="button" onClick={() => handleSave(expense.id)}>Save</button>
-                <button type="button" onClick={() => setEditingId(null)}>Cancel</button>
-              </td>
-              </>
-            ) : (
-              <>
-                <td>{expense.description}</td>
-                <td>{expense.amount}</td>
-                <td>{expense.category}</td>
-                <td>{expense.date}</td>
-                <td>
-                  <button type="button" onClick={() => handleEdit(expense.id)}>Edit</button>
-                  <button type="button" onClick={() => handleDelete(expense.id)}>Delete</button>
-                </td>
-              </>
-            )}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-
+	return (
+		<table>
+			<thead>
+				<tr>
+					<th>Descripción</th>
+					<th>Monto</th>
+					<th>Categoría</th>
+					<th>Fecha</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				{expenses.map((expense) => (
+					<tr key={expense.id}>
+						{editingId === expense.id ? (
+							<>
+								<td>
+									<input
+										type="text"
+										value={expense.description}
+										onChange={(e) =>
+											setExpense({ ...expense, description: e.target.value })
+										}
+									/>
+								</td>
+								<td>
+									<input
+										type="text"
+										value={expense.amount}
+										onChange={(e) =>
+											setExpense({ ...expense, amount: e.target.value })
+										}
+									/>
+								</td>
+								<td>
+									<select
+										value={expense.category}
+										onChange={(e) =>
+											setExpense({ ...expense, category: e.target.value })
+										}
+									>
+										{categories.map((category) => (
+											<option key={category} value={category}>
+												{category}
+											</option>
+										))}
+									</select>
+								</td>
+								<td>
+									<input
+										type="text"
+										value={expense.date}
+										onChange={(e) =>
+											setExpense({ ...expense, date: e.target.value })
+										}
+									/>
+								</td>
+								<td>
+									<button type="button" onClick={() => handleSave(expense.id)}>
+										Save
+									</button>
+									<button type="button" onClick={() => setEditingId(null)}>
+										Cancel
+									</button>
+								</td>
+							</>
+						) : (
+							<>
+								<td>{expense.description}</td>
+								<td>{expense.amount}</td>
+								<td>{expense.category}</td>
+								<td>{expense.date}</td>
+								<td>
+									<button type="button" onClick={() => handleEdit(expense.id)}>
+										Edit
+									</button>
+									<button
+										type="button"
+										onClick={() => handleDelete(expense.id)}
+									>
+										Delete
+									</button>
+								</td>
+							</>
+						)}
+					</tr>
+				))}
+			</tbody>
+		</table>
+	);
 }
-
-
-
-
-
 
 // export default ExpenseTable;
 
