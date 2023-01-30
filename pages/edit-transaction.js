@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Layout from "../components/Layout";
+import style from "../styles/Edit-tran.module.css"
 
 const EditTransactionPage = () => {
 	const router = useRouter();
@@ -48,10 +50,12 @@ const EditTransactionPage = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<label>
+		<Layout>
+		<form onSubmit={handleSubmit} className={style.form_container}>
+			<label className={style.form_label}>
 				Monto:
 				<input
+				className={style.form_input}
 					type="number"
 					name="amount"
 					value={transaction.amount}
@@ -60,9 +64,10 @@ const EditTransactionPage = () => {
 					}
 				/>
 			</label>
-			<label>
+			<label className={style.form_label}>
 				Descripción:
 				<input
+						className={style.form_input}
 					type="text"
 					name="description"
 					value={transaction.description}
@@ -71,9 +76,10 @@ const EditTransactionPage = () => {
 					}
 				/>
 			</label>
-			<label>
+			<label className={style.form_label}>
 				Categoria:
 				<input
+						className={style.form_input}
 					name="category"
 					type="text"
 					value={transaction.category}
@@ -83,9 +89,10 @@ const EditTransactionPage = () => {
 				/>
 			</label>
 
-			<label>
+			<label className={style.form_label}>
 				Tipo:
 				<select
+						className={style.form_select}
 					name="type"
 					value={transaction.type}
 					onChange={(event) =>
@@ -97,12 +104,13 @@ const EditTransactionPage = () => {
 				</select>
 			</label>
 
-			<button type="submit">Guardar</button>
+			<button className={style.form_button} type="submit">Guardar</button>
 
-			<button onClick={() => router.push("/summary")}>Cancelar</button>
+			<button onClick={() => router.push("/summary") } className={style.form_button}>Cancelar</button>
 
-			<button onClick={deleteTransaction}>Eliminar</button>
+			<button onClick={deleteTransaction} className={style.form_button}>Eliminar</button>
 		</form>
+		</Layout>
 	);
 };
 

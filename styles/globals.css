@@ -24,3 +24,146 @@ a {
     background: black;
   }
 }
+
+/* Pagina principal y tabla de datos */
+
+h1 {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 2em;
+}
+
+h2 {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 1.5em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 50px 0;
+  font-size: 1.2em;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: lightblue;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: lightblue;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: blue;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  table {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  h2 {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+  }
+
+  th, td {
+    padding: 5px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Encabezado y Nav */
+
+header nav button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+header nav button:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+
+@media (max-width: 767px) {
+  header nav button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  header nav button {
+    font-size: 18px;
+    padding: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  header nav button {
+    font-size: 20px;
+    padding: 14px;
+  }
+}
