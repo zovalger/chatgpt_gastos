@@ -47,13 +47,12 @@ const Summary = () => {
 					<tbody>
 						{transactions.map((transaction) => (
 							<tr key={transaction._id}>
-								<td>{transaction.date}</td>
+								<td>{new Date(transaction.date).toLocaleString()} </td>
 								<td>{transaction.category}</td>
 								<td>{transaction.description}</td>
 								<td>{transaction.amount}</td>
 
 								<td>
-									
 									<Link
 										// key={transaction._id}
 										href={`/edit-transaction?id=${transaction._id}`}
