@@ -53,9 +53,9 @@ const Summary = () => {
 								<td>{transaction.amount}</td>
 
 								<td>
-									{" "}
+									
 									<Link
-										key={transaction._id}
+										// key={transaction._id}
 										href={`/edit-transaction?id=${transaction._id}`}
 									>
 										<button>Editar</button>

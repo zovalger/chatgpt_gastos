@@ -16,9 +16,9 @@ const Layout = (props) => {
           <Link href="/summary">
             <button>Summary</button>
           </Link>
-          <Link href="/transactions">
+          {/* <Link href="/transactions">
             <button>Transactions</button>
-          </Link>
+          </Link> */}
         </nav>
       </header>
       {props.children}
