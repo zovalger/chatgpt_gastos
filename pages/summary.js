@@ -37,8 +37,10 @@ const Summary = () => {
 							<th>Categoria</th>
 							<th>Descripcion</th>
 							<th>valor</th>
-				
-              {/* <th>Ingreso</th>
+
+							{/* <th>opciones</th> */}
+
+							{/* <th>Ingreso</th>
 							<th>Gasto</th> */}
 						</tr>
 					</thead>
@@ -49,6 +51,16 @@ const Summary = () => {
 								<td>{transaction.category}</td>
 								<td>{transaction.description}</td>
 								<td>{transaction.amount}</td>
+
+								<td>
+									{" "}
+									<Link
+										key={transaction._id}
+										href={`/edit-transaction?id=${transaction._id}`}
+									>
+										<button>Editar</button>
+									</Link>
+								</td>
 								{/* <td>{transaction.income}</td>
 								<td>{transaction.expense}</td> */}
 							</tr>
@@ -57,15 +69,9 @@ const Summary = () => {
 				</table>
 			</div>
 
-      <Link href="/new-transaction">
-        <button>Agregar nueva transacción</button>
-      </Link>
-
-      {transactions.map((transaction) => (
-        <Link key={transaction._id} href={`/edit-transaction?id=${transaction._id}`}>
-          <button>Editar</button>
-        </Link>
-      ))}
+			<Link href="/new-transaction">
+				<button>Agregar nueva transacción</button>
+			</Link>
 		</Layout>
 	);
 };

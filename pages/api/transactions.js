@@ -52,6 +52,8 @@ async function handleCreateTransaction(req, res) {
 async function handleUpdateTransaction(req, res) {
 	try {
 		const { id } = req.query;
+		console.log(req.query);
+		console.log(req.params);
 		const { amount, type, description, category } = req.body;
 		const transaction = await Transaction.findByIdAndUpdate(
 			id,
