@@ -27,8 +27,8 @@ async function handleGetTransactions(req, res) {
 	try {
 		const transactions = id
 			? await Transaction.findById(id)
-			: await Transaction.find();
-			
+			: await Transaction.find().sort({ date: -1 });
+
 		res.status(200).json({ transactions });
 	} catch (error) {
 		res.status(500).json({ message: "Error fetching transactions", error });

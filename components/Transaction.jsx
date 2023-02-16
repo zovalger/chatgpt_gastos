@@ -9,11 +9,11 @@ export default function Transaction({ data }) {
 			<div className={styles.fecha}>{new Date(date).toLocaleString()} </div>
 
 			<div className="row">
-				<div className="col-3">{category}</div>
+				<div className="col-4">{category}</div>
 
 				<div className="col-5">{description}</div>
 
-				<div className="col-4">
+				<div className="col-3">
 					<div className="row text-center">
 						<div className={`${styles.income} col-6`}>
 							{type === "income" ? amount : null}
