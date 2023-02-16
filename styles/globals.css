@@ -27,6 +27,8 @@ a {
 
 /* Pagina principal y tabla de datos */
 
+/* 
+
 h1 {
   text-align: center;
   margin: 50px 0;
@@ -119,8 +121,6 @@ button:hover {
   }
 }
 
-/* Encabezado y Nav */
-
 header nav button {
   background-color: black;
   color: white;
@@ -166,4 +166,4 @@ header {
     font-size: 20px;
     padding: 14px;
   }
-}
+} */

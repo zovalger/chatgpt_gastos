@@ -1,0 +1,26 @@
+.container {
+	display: block;
+	margin-top: 0.5rem;
+	border-radius: 0.8rem;
+	padding: 1rem;
+
+	background: #85858531;
+	// border-top: 1px solid black;
+	color: black;
+	box-shadow: 2px 2px 2px #00000009;
+	text-decoration: none;
+}
+
+.fecha {
+	margin-bottom: 0.3rem;
+
+	border-bottom: 1px solid gray;
+}
+
+.expense {
+	color: #f44;
+}
+
+.income {
+	color: #44f;
+}

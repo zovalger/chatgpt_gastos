@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-const Layout = (props) => {
+const OldLayout = (props) => {
   return (
     <div>
       <Head>
-        <title>My App</title>
-        <link rel="stylesheet" href="/static/styles.css" />
+        <title>app de gastos e ingresos</title>
+        {/* <link rel="stylesheet" href="/static/styles.css" /> */}
       </Head>
       <header>
         <nav>
@@ -26,4 +26,4 @@ const Layout = (props) => {
   );
 };
 
-export default Layout;
+export default OldLayout;
