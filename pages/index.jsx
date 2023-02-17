@@ -13,11 +13,11 @@ export default function Home() {
 	useEffect(() => {
 		setTimeout(() => {
 			r.push("/summary");
-		}, 3000);
+		}, 1100);
 	}, []);
 
 	return (
-		<div className="d-inline-flex vh-100 vw-100 justify-content-center align-items-center flex-column">
+		<div className="container d-flex vh-100 px-3 flex-column justify-content-center align-items-center">
 			<TypingText>Income and Expense Record</TypingText>
 			<div className="svg-loader">
 				<svg
