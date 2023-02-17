@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Form from "react-bootstrap/Form";
 import style from "../styles/New-tran.module.css";
 
+
 const NewTransaction = () => {
 	const [amount, setAmount] = useState("");
 	const [description, setDescription] = useState("");

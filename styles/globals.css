@@ -1,169 +1,73 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+	html {
+		color-scheme: dark;
+	}
+	body {
+		color: white;
+		background: black;
+	}
 }
 
-/* Pagina principal y tabla de datos */
 
-/* 
 
-h1 {
-  text-align: center;
-  margin: 50px 0;
-  font-size: 2em;
-}
 
-h2 {
-  display: inline-block;
-  margin-right: 30px;
-  font-size: 1.5em;
-}
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 50px 0;
-  font-size: 1.2em;
-}
 
-th, td {
-  border: 1px solid black;
-  padding: 10px;
-  text-align: left;
-}
 
-th {
-  background-color: lightblue;
-  color: white;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: lightblue;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  transition: background-color 0.2s ease-in-out;
-}
-
-button:hover {
-  background-color: blue;
-}
-
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
-
-  table {
-    font-size: 1em;
-  }
-
-  button {
-    font-size: 1em;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  h1 {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  h2 {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  table {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 20px;
-  }
-
-  th, td {
-    padding: 5px;
-  }
-
-  button {
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-
-header nav button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-  font-size: 16px;
-}
-
-header nav button:hover {
-  background-color: lightblue;
-  cursor: pointer;
-}
-
-header {
-  background-color: black;
-  color: white;
-  display: flex;
+.svg-loader{
+  display:flex;
+  position: relative;
+  align-content: space-around;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+
+  margin-top: 2rem;
+}
+.loader-svg{
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  fill: none;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke: rgb(64, 0, 148);
+}
+.loader-svg.bg{
+  stroke-width: 8px;
+  stroke: rgb(207, 205, 245);
 }
 
-
-
-@media (max-width: 767px) {
-  header nav button {
-    font-size: 14px;
-    padding: 10px;
+.animate{
+  stroke-dasharray: 242.6;
+  animation: fill-animation 1s cubic-bezier(1,1,1,1) 0s infinite;
+}
+@keyframes fill-animation{
+  0%{
+    stroke-dasharray: 40 242.6;
+    stroke-dashoffset: 0;
+  }
+  50%{
+    stroke-dasharray: 141.3;
+    stroke-dashoffset: 141.3;
+  }
+  100%{
+    stroke-dasharray: 40 242.6;
+    stroke-dashoffset: 282.6;
   }
 }
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  header nav button {
-    font-size: 18px;
-    padding: 12px;
-  }
-}
-
-@media (min-width: 1024px) {
-  header nav button {
-    font-size: 20px;
-    padding: 14px;
-  }
-} */

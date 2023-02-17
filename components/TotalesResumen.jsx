@@ -18,7 +18,7 @@ export default function TotalesResumen({ totalIngreso, totalGasto }) {
 
 			<div className="col-12 my-2">
 				<Link
-					className="btn btn-outline-primary  w-100 h-100 d-inline-flex align-items-center justify-content-center "
+					className="btn btn-primary  w-100 h-100 d-inline-flex align-items-center justify-content-center "
 					href="/new-transaction"
 				>
 					+

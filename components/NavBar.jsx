@@ -1,27 +1,27 @@
+import Link from "next/link";
 import Image from "next/image";
-import styles from "./NavBar.module.scss";
-
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Link from "next/link";
 
-export default function NavBar() {
-	const nameApp = "app de gastos";
+import styles from "./NavBar.module.scss";
+
+export default function NavBar({ name }) {
+	const nameApp = name || "name page";
 
 	return (
 		<Navbar
 			bg="primary"
 			variant="dark"
 			expand={"lg"}
-			className={styles.container}
+			className={styles.container + " sticky-top"}
 		>
 			<Container fluid>
 				<Link href="/" className="navbar-brand">
 					{/* <Image
 						className={styles.logo + " d-inline-block align-top"}
-						src="/GoThere-black.svg"
+						src="/IMG_20230216_170039_985.jpg"
 						alt="logo"
 						width={30}
 						height={30}
@@ -42,12 +42,15 @@ export default function NavBar() {
 					</Offcanvas.Header>
 					<Offcanvas.Body>
 						<Nav className="justify-content-end flex-grow-1 pe-3">
+							{/* <Link href="/" className="nav-link">
+								Home
+							</Link> */}
+
 							<Link href="/" className="nav-link">
 								Home
 							</Link>
-
-							<Link href="/summary" className="nav-link">
-								Summary
+							<Link href="/new-transaction" className="nav-link">
+								Add transaction
 							</Link>
 						</Nav>
 					</Offcanvas.Body>
