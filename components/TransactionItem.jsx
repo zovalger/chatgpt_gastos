@@ -15,7 +15,7 @@ export default function TransactionItem({ data }) {
 
 				<div
 					className={`col-3 text-center ${
-						type === "income" ? "text-danger" : "text-success"
+						type === "income" ?  "text-success":"text-danger"
 					}`}
 				>
 					{amount}
